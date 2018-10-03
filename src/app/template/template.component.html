@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 <h1 style="text-align: center; margin-top: 50px">Validation</h1>
 <form #frm="ngForm">
   <div class="form-group">
@@ -8,13 +8,12 @@
      [(ngModel)]="user.name"
        required
        #nameUser = "ngModel" 
-       pattern="[a-z]{1,15}"
-      
+       pattern="[a-z]{1,15}" 
     >
   </div>
   <div *ngIf="nameUser.touched">
     <div *ngIf="nameUser.errors?.required">
-        <span style="color: red;">{{ERROR_MESSAGE.USER.EXIST}}</span>
+        <span style="color: red;">Name is requied</span>
     </div>
   </div>
   <div *ngIf="nameUser.touched">
@@ -24,7 +23,7 @@
       </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email@gmai.com" name="email" 
+    <input type="email" class="form-control custom-form" id="exampleFormControlInput1" placeholder="Email@gmai.com" name="email" 
     [(ngModel)]="user.email" 
     required
     #email ="ngModel"
@@ -45,7 +44,7 @@
     <label for="contact">Contact</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="contact" name = "contact"
     [(ngModel)]="user.contact"
-      required
+    required
     #contact ="ngModel"
     pattern="[0-9]*"
    >
@@ -62,4 +61,18 @@
       </div>
   <button type="button" (click)="addUser()" class="btn btn-primary" style="text-align: center" [disabled]="frm.invalid">Submit</button>
 </form>
-</div>
+</div> -->
+<form #frm="ngForm" class="form-support">
+    <div class="form-group-description">
+        <label class="description-label generic-attribute" translate>Description*</label>
+        <textarea #textarea (input)="autoHeight()" class="form-control-textarea input-attribute generic-attribute" [ngClass]="{'active': descriptionSupport.touched && descriptionSupport.errors?.required}"
+            name="description" [(ngModel)]="support.description" required #descriptionSupport="ngModel" placeholder="{{Description}}"></textarea>
+        <div class="description-required" *ngIf="descriptionSupport.touched">
+            <div *ngIf="descriptionSupport.errors?.required" style="color: red">Description is required</div>
+        </div>
+    </div>
+    <div class="form-group-send">
+            <button class="send-button generic-attribute btn btn-success"  [disabled]="frm.invalid"
+              >Send</button>
+          </div>
+</form>

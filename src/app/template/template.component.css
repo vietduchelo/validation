@@ -7,3 +7,6 @@
     width: 80%;
     height: 400px;
 }
+.active {
+    border: 1px solid red
+}
