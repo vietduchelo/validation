@@ -1,0 +1,15 @@
+// jscs:disable
+export var ERROR_MESSAGE = [ {
+    USER: {
+      EXIST: 'RESTAURANT_EXIST',
+      NOT_FOUND: 'RESTAURANT_NOT_FOUND',
+      INVALD: 'RESTAURANT_INVALID',
+    },
+    AUTH: {
+      INVALID_TOKEN: 'INVALID_TOKEN',
+      PERMISSION: 'PERMISSION',
+      NOT_AUTHORIZED: 'NOT_AUTHORIZED'
+    }
+  },
+  
+  ];
