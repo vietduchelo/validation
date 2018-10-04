@@ -14,7 +14,8 @@ export class TemplateComponent implements OnInit {
   //   contact: ''
   // };
   support : Suport = <Suport>{
-    description:''
+    description:'',
+    email: ''
   }
   constructor() { }
 

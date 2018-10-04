@@ -71,6 +71,14 @@
             <div *ngIf="descriptionSupport.errors?.required" style="color: red">Description is required</div>
         </div>
     </div>
+    <div class="form-group-description">
+        <label class="description-label generic-attribute" translate>Email*</label>
+        <input  class="form-control-textarea input-attribute generic-attribute" [ngClass]="{'active': emailSupport.touched && emailSupport.errors?.required}"
+            name="email" [(ngModel)]="support.email" required #emailSupport="ngModel" placeholder="{{email}}">
+        <div class="description-required" *ngIf="emailSupport.touched">
+            <div *ngIf="emailSupport.errors?.required" style="color: red">Email is required</div>
+        </div>
+    </div>
     <div class="form-group-send">
             <button class="send-button generic-attribute btn btn-success"  [disabled]="frm.invalid"
               >Send</button>
